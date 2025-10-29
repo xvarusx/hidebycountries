@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace Oussema\HideByCountries\Middleware;
@@ -14,7 +15,6 @@ use Psr\Http\Server\RequestHandlerInterface;
 use TYPO3\CMS\Core\Configuration\ExtensionConfiguration;
 use Psr\Log\LoggerInterface;
 
-
 class GeoLocationMiddleware implements MiddlewareInterface
 {
     private const COOKIE_NAME = 'user_country';
@@ -24,7 +24,8 @@ class GeoLocationMiddleware implements MiddlewareInterface
         private readonly GeoLocationRepository $geoLocationRepository,
         private readonly ExtensionConfiguration $extensionConfiguration,
         private readonly LoggerInterface $logger
-    ) {}
+    ) {
+    }
 
     public function process(ServerRequestInterface $request, RequestHandlerInterface $handler): ResponseInterface
     {
@@ -70,18 +71,18 @@ class GeoLocationMiddleware implements MiddlewareInterface
 
         // Get IP address
         $ipAddress = $this->getClientIpAddress($request);
-        
+
         // Get country from repository (which handles caching)
         return $this->geoLocationRepository->findCountryForIp($ipAddress);
     }
 
     private function getClientIpAddress(ServerRequestInterface $request): IpAddress
     {
-        $devlopementMode = $this->extensionConfiguration->get('hidebycountries','developemntMode');
+        $devlopementMode = $this->extensionConfiguration->get('hidebycountries', 'developemntMode');
         if ($devlopementMode) {
-             return  IpAddress::fromString(
-            $this->extensionConfiguration->get('hidebycountries', 'publicIpAddressForTesting')??'234.162.28.227'
-          );
+            return  IpAddress::fromString(
+                $this->extensionConfiguration->get('hidebycountries', 'publicIpAddressForTesting') ?? '234.162.28.227'
+            );
         }
 
         return IpAddress::fromString($request->getServerParams()['REMOTE_ADDR']);

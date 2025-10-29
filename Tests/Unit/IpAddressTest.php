@@ -2,7 +2,7 @@
 declare(strict_types=1);
 
 
-namespace Oussema\HideByCountries\Tests\Unit\Domain\Model;
+namespace Oussema\HideByCountries\Tests\Unit;
 
 use PHPUnit\Framework\TestCase;
 use Oussema\HideByCountries\Domain\Model\IpAddress;

@@ -9,21 +9,20 @@ use TYPO3\CMS\Frontend\ContentObject\Event\AfterStdWrapFunctionsExecutedEvent;
 
 final class HideCeEventListener
 {
-
-#[AsEventListener(
-    identifier: 'HideByCountries/hide-content-element',
-)]
+    #[AsEventListener(
+        identifier: 'HideByCountries/hide-content-element',
+    )]
     public function __invoke(AfterStdWrapFunctionsExecutedEvent $event): void
     {
         $cObjectRenderer = $event->getContentObjectRenderer();
         $hiddenCountries = $cObjectRenderer->data['tx_hidebycountries'] ?? '';
-        if(!$hiddenCountries) {
+        if (!$hiddenCountries) {
             return;
         }
         $userCountry = $event->getContentObjectRenderer()->getRequest()->getCookieParams()['user_country'] ?? null;
-        if($userCountry){
+        if ($userCountry) {
             $hiddenCountries = explode(',', $hiddenCountries ?? '');
-            if(in_array($userCountry, $hiddenCountries, true)){
+            if (in_array($userCountry, $hiddenCountries, true)) {
                 $event->setContent('');
             }
         }

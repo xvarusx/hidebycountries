@@ -25,9 +25,4 @@ return FractorConfiguration::configure()
         TypoScriptProcessorOption::INDENT_CONDITIONS => true,
         XmlProcessorOption::INDENT_CHARACTER => Indent::STYLE_TAB,
         XmlProcessorOption::INDENT_SIZE => 1,
-    ])
-    ->withSkip([
-        __DIR__ . '/../../Configuration/FlexForms/flexform_category_list.xml',
-        __DIR__ . '/../../Resources/Private/Templates/News/GoogleNews.xml',
-        __DIR__ . '/../../Resources/Private/Templates/News/List.xml',
     ]);

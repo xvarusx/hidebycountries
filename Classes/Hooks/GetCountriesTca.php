@@ -6,6 +6,7 @@ namespace Oussema\HideByCountries\Hooks;
 
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Core\Country\CountryProvider;
+
 class GetCountriesTca
 {
     public function loadCountries(&$params): void
@@ -14,7 +15,7 @@ class GetCountriesTca
 
         $allCountries = $countryProvider->getAll();
         foreach ($allCountries as $country) {
-             $params['items'][] = ['label' => $country->getName(), 'value' => $country->getAlpha2IsoCode()];
+            $params['items'][] = ['label' => $country->getName(), 'value' => $country->getAlpha2IsoCode()];
         }
     }
 }

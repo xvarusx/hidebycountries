@@ -6,11 +6,10 @@ use TYPO3\CMS\Core\Cache\Frontend\FrontendInterface;
 use Oussema\HideByCountries\Domain\Model\CountryCode;
 use Oussema\HideByCountries\Utility\Apis\GeoLocationApiInterface;
 use Oussema\HideByCountries\Domain\Repository\GeoLocationRepository;
-use Oussema\HideByCountries\Domain\Model\IpAddress; // added import
+use Oussema\HideByCountries\Domain\Model\IpAddress; 
 
 final class GeoLocationRepositoryTest extends TestCase
 {
-    // declare typed properties to avoid dynamic property deprecations
     protected FrontendInterface $cache;
     protected GeoLocationApiInterface $service;
     protected GeoLocationRepository $repository;

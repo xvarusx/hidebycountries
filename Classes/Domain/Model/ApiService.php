@@ -8,16 +8,17 @@ class ApiService
 {
     private String $apiEndPoint;
     private String $apiKey;
-    public function __construct(private readonly ExtensionConfiguration $extensionConfiguration){
-            $this->setApiService($extensionConfiguration);
+    public function __construct(private readonly ExtensionConfiguration $extensionConfiguration)
+    {
+        $this->setApiService($extensionConfiguration);
     }
 
 
     private function setApiService(ExtensionConfiguration $extensionConfiguration): void
     {
         $config = $extensionConfiguration->get('hidebycountries');
-        $this->setApiEndPoint($config['apiEndPoint'] ?? 'https://aether.epias.ltd/ip2country/' );
-        $this->setApiKey($config['apiKey']??'');
+        $this->setApiEndPoint($config['apiEndPoint'] ?? 'https://aether.epias.ltd/ip2country/');
+        $this->setApiKey($config['apiKey'] ?? '');
     }
     public function getApiEndPoint(): String
     {
@@ -27,7 +28,7 @@ class ApiService
     {
         if (empty($apiEndPoint) && filter_var($apiEndPoint, FILTER_VALIDATE_URL) === false) {
             throw new \InvalidArgumentException('Service URL cannot be empty and must be a valid URL');
-        }else{
+        } else {
             $this->apiEndPoint = $apiEndPoint;
         }
     }
@@ -37,6 +38,6 @@ class ApiService
     }
     public function setApiKey(String $apiKey): void
     {
-        $this->apiKey = $apiKey;   
+        $this->apiKey = $apiKey;
     }
 }

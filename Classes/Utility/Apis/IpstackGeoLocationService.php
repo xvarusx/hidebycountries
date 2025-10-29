@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace Oussema\HideByCountries\Services\Apis;
@@ -16,16 +17,16 @@ use Oussema\HideByCountries\Utility\Apis\GeoLocationApiInterface;
 
 class IpstackGeoLocationService implements GeoLocationApiInterface
 {
-
     public function __construct(
         private readonly RequestFactory $requestFactory,
         private readonly ExtensionConfiguration $extensionConfiguration,
         private readonly ?LoggerInterface $logger = null
-    ) {}
+    ) {
+    }
 
     public function getCountryForIp(IpAddress $ipAddress): CountryCode
     {
-        $apiService = GeneralUtility::makeInstance(ApiService::class,$this->extensionConfiguration);
+        $apiService = GeneralUtility::makeInstance(ApiService::class, $this->extensionConfiguration);
         try {
             $response = $this->requestFactory->request(
                 $apiService->getApiEndPoint() . $ipAddress->toString(),
@@ -45,13 +46,13 @@ class IpstackGeoLocationService implements GeoLocationApiInterface
             }
 
             $content = trim($response->getBody()->getContents());
-            
+
             return CountryCode::fromString($content);
 
         } catch (GuzzleException $e) {
             $this->logger?->error('GeoLocation API request failed', [
                 'ip' => $ipAddress->toString(),
-                'error' => $e->getMessage()
+                'error' => $e->getMessage(),
             ]);
             throw GeoLocationException::fromApiError($e->getMessage(), 0, $e);
         } catch (\InvalidArgumentException $e) {

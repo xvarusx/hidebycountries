@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace Oussema\HideByCountries\Tests\Unit\Middleware;
+namespace Oussema\HideByCountries\Tests\Unit;
 
 use PHPUnit\Framework\TestCase;
 use Oussema\HideByCountries\Middleware\GeoLocationMiddleware;
@@ -12,7 +12,6 @@ use TYPO3\CMS\Core\Configuration\ExtensionConfiguration;
 use Oussema\HideByCountries\Domain\Repository\GeoLocationRepository;
 use Oussema\HideByCountries\Domain\Model\CountryCode;
 use Psr\Http\Message\ResponseInterface;
-use PHPUnit\Framework\MockObject\MockObject;
 
 final class GeoLocationMiddlewareTest extends TestCase
 {

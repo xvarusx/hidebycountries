@@ -50,9 +50,6 @@ return RectorConfig::configure()
             __DIR__ . '/../../Classes/Domain/Repository/AbstractDemandedRepository.php',
             __DIR__ . '/../../Classes/Service/SettingsService.php',
             __DIR__ . '/../../Classes/ViewHelpers/',
-        ],
-        DateTimeAspectInsteadOfGlobalsExecTimeRector::class => [
-            __DIR__ . '/../../Tests/Unit/Backend/FormDataProvider/NewsRowInitializeNewTest.php',
-        ],
+        ]
     ])
 ;

@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace Oussema\HideByCountries\Domain\Model;
@@ -20,12 +21,12 @@ final class IpAddress
     }
 
     private function setValue(string $value): void
-    { 
-        if($value === '' || $value == '127.0.0.1') {
+    {
+        if ($value === '' || $value == '127.0.0.1') {
             $this->value = '234.162.28.227';
-        }elseif (!filter_var($value, FILTER_VALIDATE_IP)){
+        } elseif (!filter_var($value, FILTER_VALIDATE_IP)) {
             throw new InvalidArgumentException('Invalid IP address format');
-        }else{
+        } else {
             $this->value = $value;
         }
     }
