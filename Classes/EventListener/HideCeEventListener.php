@@ -10,7 +10,7 @@ use TYPO3\CMS\Frontend\ContentObject\Event\AfterStdWrapFunctionsExecutedEvent;
 final class HideCeEventListener
 {
     #[AsEventListener(
-        identifier: 'HideByCountries/hide-content-element',
+        identifier: 'hidebycountries/hide-content-element',
     )]
     public function __invoke(AfterStdWrapFunctionsExecutedEvent $event): void
     {
