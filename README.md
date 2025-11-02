@@ -32,7 +32,7 @@
 
 ### Via Composer
 ```bash
-composer require xvarusx/hide-by-countries
+composer require oussema/hidebycountries
 ```
 ---
 ## Manual Installation
