@@ -10,7 +10,7 @@ use TYPO3\CMS\Core\Http\RequestFactory;
 
 final class AetherEpiasGeoLocationService implements GeoLocationApiInterface
 {
-    public const ENDPOINT = "https://aether.epias.ltd/ip2country/";
+    public const ENDPOINT = 'https://aether.epias.ltd/ip2country/';
     public function __construct(
         private readonly RequestFactory $requestFactory,
     ) {}
@@ -20,10 +20,10 @@ final class AetherEpiasGeoLocationService implements GeoLocationApiInterface
         try {
             $response = $this->requestFactory->request(
                 self::ENDPOINT . $ipAddress,
-                "GET",
+                'GET',
                 [
-                    "headers" => [
-                        "access-control-allow-origin" => "*",
+                    'headers' => [
+                        'access-control-allow-origin' => '*',
                     ],
                 ],
             );
@@ -31,7 +31,7 @@ final class AetherEpiasGeoLocationService implements GeoLocationApiInterface
             if ($response->getStatusCode() !== 200) {
                 throw GeoLocationException::fromApiError(
                     sprintf(
-                        "API returned status code %d",
+                        'API returned status code %d',
                         $response->getStatusCode(),
                     ),
                 );

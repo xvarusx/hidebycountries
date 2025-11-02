@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace Oussema\HideByCountries\Tests\Unit\Domain\Model;
 
-use TYPO3\TestingFramework\Core\Unit\UnitTestCase;
 use Oussema\HideByCountries\Domain\Model\IpAddress;
+use TYPO3\TestingFramework\Core\Unit\UnitTestCase;
 
 final class IpAddressTest extends UnitTestCase
 {

@@ -14,7 +14,7 @@ final class ExtConfiguration
 
     /** @var string */
     protected $publicIpAddressForTesting = '234.162.28.227';
-    
+
     /** @var bool */
     protected $isBackendIndicatorEnabled;
 

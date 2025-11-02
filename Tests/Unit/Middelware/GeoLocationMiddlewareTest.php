@@ -4,14 +4,14 @@ declare(strict_types=1);
 
 namespace Oussema\HideByCountries\Tests\Unit\Middelware;
 
-use TYPO3\TestingFramework\Core\Unit\UnitTestCase;
-use Oussema\HideByCountries\Middleware\GeoLocationMiddleware;
-use Oussema\HideByCountries\Domain\Repository\GeoLocationRepository;
 use Oussema\HideByCountries\Domain\Model\CountryCode;
+use Oussema\HideByCountries\Domain\Repository\GeoLocationRepository;
+use Oussema\HideByCountries\Middleware\GeoLocationMiddleware;
+use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Psr\Http\Server\RequestHandlerInterface;
-use Psr\Http\Message\ResponseInterface;
 use TYPO3\CMS\Core\Configuration\ExtensionConfiguration;
+use TYPO3\TestingFramework\Core\Unit\UnitTestCase;
 
 final class GeoLocationMiddlewareTest extends UnitTestCase
 {
@@ -92,7 +92,6 @@ final class GeoLocationMiddlewareTest extends UnitTestCase
         $this->geoLocationRepository
             ->method('findCountryForIp')
             ->willThrowException(new \Exception('API Error'));
-
 
         // Execute middleware
         $result = $this->middleware->process($this->request, $this->handler);

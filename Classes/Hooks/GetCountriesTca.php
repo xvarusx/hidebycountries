@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace Oussema\HideByCountries\Hooks;
 
-use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Core\Country\CountryProvider;
+use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 class GetCountriesTca
 {

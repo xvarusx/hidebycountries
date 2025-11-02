@@ -4,12 +4,9 @@ declare(strict_types=1);
 
 namespace Oussema\HideByCountries\Tests\Functional;
 
-use TYPO3\CMS\Core\Http\Uri;
-use TYPO3\CMS\Core\Http\ServerRequest;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
-use TYPO3\CMS\Core\Core\SystemEnvironmentBuilder;
-use TYPO3\TestingFramework\Core\Functional\FunctionalTestCase;
 use TYPO3\TestingFramework\Core\Functional\Framework\Frontend\InternalRequest;
+use TYPO3\TestingFramework\Core\Functional\FunctionalTestCase;
 
 /**
  * Functional tests for the Hide-By-Countries extension
@@ -32,7 +29,6 @@ final class HideByCountriesFunctionalTest extends FunctionalTestCase
         $this->importCSVDataSet(__DIR__ . '/Fixtures/pages.csv');
         $this->importCSVDataSet(__DIR__ . '/Fixtures/sys_template.csv');
         $this->importCSVDataSet(__DIR__ . '/Fixtures/tt_content.csv');
-
 
         // Create minimal root TypoScript configuration
 

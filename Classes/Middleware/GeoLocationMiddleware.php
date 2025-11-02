@@ -4,13 +4,13 @@ declare(strict_types=1);
 
 namespace Oussema\HideByCountries\Middleware;
 
-use Psr\Http\Message\ResponseInterface;
-use Psr\Http\Server\MiddlewareInterface;
-use Psr\Http\Message\ServerRequestInterface;
-use Psr\Http\Server\RequestHandlerInterface;
-use Oussema\HideByCountries\Domain\Repository\GeoLocationRepository;
 use Oussema\HideByCountries\Domain\Model\Dto\ExtConfiguration;
+use Oussema\HideByCountries\Domain\Repository\GeoLocationRepository;
 use Oussema\HideByCountries\Utility\SessionManagementUtility;
+use Psr\Http\Message\ResponseInterface;
+use Psr\Http\Message\ServerRequestInterface;
+use Psr\Http\Server\MiddlewareInterface;
+use Psr\Http\Server\RequestHandlerInterface;
 
 class GeoLocationMiddleware implements MiddlewareInterface
 {
@@ -18,8 +18,7 @@ class GeoLocationMiddleware implements MiddlewareInterface
         private readonly ExtConfiguration $extensionConfiguration,
         private readonly GeoLocationRepository $geoLocationRepository,
         private readonly SessionManagementUtility $sessionManagement,
-    ) {
-    }
+    ) {}
     public function process(ServerRequestInterface $request, RequestHandlerInterface $handler): ResponseInterface
     {
         $this->setCountryCookie($request);

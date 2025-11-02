@@ -2,12 +2,12 @@
 
 namespace Oussema\HideByCountries\Tests\Unit\Domain\Repository;
 
-use TYPO3\TestingFramework\Core\Unit\UnitTestCase;
-use TYPO3\CMS\Core\Cache\Frontend\FrontendInterface;
 use Oussema\HideByCountries\Domain\Model\CountryCode;
-use Oussema\HideByCountries\Utility\Apis\GeoLocationApiInterface;
-use Oussema\HideByCountries\Domain\Repository\GeoLocationRepository;
 use Oussema\HideByCountries\Domain\Model\IpAddress;
+use Oussema\HideByCountries\Domain\Repository\GeoLocationRepository;
+use Oussema\HideByCountries\Utility\Apis\GeoLocationApiInterface;
+use TYPO3\CMS\Core\Cache\Frontend\FrontendInterface;
+use TYPO3\TestingFramework\Core\Unit\UnitTestCase;
 
 final class GeoLocationRepositoryTest extends UnitTestCase
 {
