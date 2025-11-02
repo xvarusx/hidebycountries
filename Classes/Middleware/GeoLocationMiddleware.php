@@ -31,7 +31,7 @@ class GeoLocationMiddleware implements MiddlewareInterface
         if (is_null($this->sessionManagement->getCountryFromSession($request))) {
             $ipAddress = $this->getClientPublicIpAddress($request);
             $countryCode = $this->geoLocationRepository->findCountryForIp($ipAddress);
-            $this->sessionManagement->storeCountryInSession($countryCode,$request);
+            $this->sessionManagement->storeCountryInSession($countryCode, $request);
         }
     }
 
@@ -44,4 +44,3 @@ class GeoLocationMiddleware implements MiddlewareInterface
         return $request->getServerParams()['REMOTE_ADDR'];
     }
 }
-
