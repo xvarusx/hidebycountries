@@ -77,5 +77,6 @@ $config->setFinder(
         'trailing_comma_in_multiline' => ['elements' => ['arrays']],
         'whitespace_after_comma_in_array' => ['ensure_single_space' => true],
         'yoda_style' => ['equal' => false, 'identical' => false, 'less_and_greater' => false],
+        'nullable_type_declaration_for_default_null_value' => true,
     ]);
 return $config;

@@ -21,9 +21,6 @@ class ExtensionIntegrationTest extends FunctionalTestCase
     protected array $coreExtensionsToLoad = [
         'frontend',
     ];
-    // protected array $pathsToProvideInTestInstance = [
-    //     'typo3conf/ext/hidebycountries/Tests/Functional/Fixtures/Sites/' => 'typo3conf/sites/',
-    // ];
     protected function createSiteConfiguration(string $siteIdentifier = 'testing'): void
     {
         $siteConfigPath = $this->instancePath . '/typo3conf/sites/' . $siteIdentifier;
@@ -71,9 +68,8 @@ class ExtensionIntegrationTest extends FunctionalTestCase
 
         $this->createSiteConfiguration('testing');
 
-        $GLOBALS['TYPO3_CONF_VARS']['EXTENSIONS']['hidebycountries']['classNameSpace'] =
-              \Oussema\HideByCountries\Tests\Functional\FakeGeoLocationService::class;
-
+        $GLOBALS['TYPO3_CONF_VARS']['EXTENSIONS']['hidebycountries']['classNameSpace']
+            = \Oussema\HideByCountries\Tests\Functional\FakeGeoLocationService::class;
     }
 
     /**
