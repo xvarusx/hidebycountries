@@ -1,146 +1,110 @@
+..  include:: /Includes.rst.txt
 
----
+.. _start:
 
-## 📘 2. `Documentation/Index.rst` (for TER / docs.typo3.org)
-
-This is the **ReStructuredText** version suitable for your extension’s documentation directory.
-
-**File:** `Documentation/Index.rst`
-
-```rst
-.. include:: ../Includes.txt
-
-====================
+==================
 Hide by Countries
-====================
+==================
+
+Welcome to the **hidebycountries** extension documentation.
+
+The `hidebycountries` TYPO3 extension allows integrators and developers to **conditionally hide TYPO3 content elements, plugins, or pages based on the visitor’s country**.  
+It uses IP-based geolocation lookup and provides flexible configuration options to control what content should be visible for each country.
+
+This manual helps you install, configure, and customize the extension in your TYPO3 project.
+
+----
+
+..  card-grid::
+    :columns: 1
+    :columns-md: 2
+    :gap: 4
+    :class: pb-4
+    :card-height: 100
+
+    ..  card:: Introduction
+
+        Learn what **hidebycountries** does, how it works under the hood, and which TYPO3 use cases it solves.
+
+        ..  card-footer:: :ref:`Get an overview <introduction>`
+            :button-style: btn btn-secondary stretched-link
+
+    ..  card:: Installation
+
+        Step-by-step guide on how to install and activate the extension via Composer or the TYPO3 Extension Manager.
+
+        ..  card-footer:: :ref:`View the installation steps <installation>`
+            :button-style: btn btn-secondary stretched-link
+
+    ..  card:: Configuration
+
+        Learn how to configure caching, country detection, and content visibility rules for your TYPO3 instance.
+
+        ..  card-footer:: :ref:`Learn how to configure the extension <configuration>`
+            :button-style: btn btn-secondary stretched-link
+
+    ..  card:: The editor section
+
+        See how editors can manage and control visibility rules for individual pages and content elements directly in the TYPO3 backend.
+
+        ..  card-footer:: :ref:`Discover editor specific tools <for-editors>`
+            :button-style: btn btn-secondary stretched-link
+
+    ..  card:: The developers corner
+
+        Learn how developers can extend or customize the geolocation logic, add hooks, or work with the provided PSR-14 events.
+
+        ..  card-footer:: :ref:`Get to know the developers corner <developer>`
+            :button-style: btn btn-secondary stretched-link
+
+    ..  card:: Troubleshooting
+
+        Having issues with country detection, caching, or content visibility? Find known issues and debugging tips here.
+
+        ..  card-footer:: :ref:`Learn how to troubleshoot <known-problems>`
+            :button-style: btn btn-secondary stretched-link
+
+
+..  toctree::
+    :hidden:
+    :titlesonly:
+
+    Introduction/Index
+    Installation/Index
+    Configuration/Index
+    Editor/Index
+    Templates/Index
+    Developer/Index
+    KnownProblems/Index
+
+..  Meta Menu
+
+..  toctree::
+    :hidden:
+
+    Sitemap
+
+----
 
 :Extension key:
-   hidebycountries
+    hidebycountries
+
+:Package name:
+    oussema/hidebycountries
+
 :Version:
-   1.0.0
+    |2.0.0|
+
 :Language:
-   en
+    en
+
 :Author:
-   Oussema Harrabi
+    `Oussema Harrabi <https://oussemaharrbi.tn/>`__
+
 :License:
-   GPL-2.0-or-later
+    This document is published under the
+    `Creative Commons BY 4.0 <https://creativecommons.org/licenses/by/4.0/>`__
+    license.
+
 :Rendered:
-   |today|
-
-----
-
-A TYPO3 extension that allows integrators and editors to **show or hide content elements based on the visitor’s country**, using a GeoIP middleware and cached lookup.
-
-----
-
-Features
-=========
-
-* 🌍 Hide or show content elements by country
-* ⚙️ Pluggable GeoIP API service
-* 💾 Caching for improved performance
-* 🍪 Country stored securely in a cookie
-* 🧩 PSR-15 middleware integration
-* 🔌 Optional backend Page Module indicator
-* ✅ Compatible with TYPO3 v12 and v13
-
-----
-
-Installation
-============
-
-Via Composer:
-
-.. code-block:: bash
-
-   composer require oussema/hidebycountries
-
-Or install via the Extension Manager in the TYPO3 backend.
-
-----
-
-Configuration
-=============
-
-The extension can be configured under:
-
-**Admin Tools → Settings → Extension Configuration → Hide by Countries**
-
-.. list-table::
-   :header-rows: 1
-
-   * - Option
-     - Description
-     - Default
-   * - developemntMode
-     - Enable static test IP for debugging
-     - 1
-   * - publicIpAddressForTesting
-     - IP used when development mode is active
-     - 234.162.28.227
-   * - classNameSpace
-     - GeoIP service class name
-     - \Oussema\HideByCountries\Utility\Apis\AetherEpiasGeoLocationService
-   * - showBackendRestrictionIndicator
-     - Show restricted indicator in backend preview
-     - 1
-
-----
-
-How It Works
-============
-
-1. The middleware detects the visitor’s country by IP and sets a cookie.
-2. The country code is registered in the frontend as ``{$TSFE->register['user_country']}``.
-3. Content elements with a restricted country list are hidden dynamically.
-4. An optional backend indicator shows restricted CEs in the Page module.
-
-----
-
-Screenshots
-===========
-
-.. figure:: ../Images/backend-preview.png
-   :class: with-shadow
-
-   Example of restricted content element indicator in the Page module.
-
-----
-
-Developers
-===========
-
-You can implement your own GeoIP lookup class by extending the base interface and updating the namespace in your configuration.
-
-Example:
-
-.. code-block:: php
-
-   namespace Vendor\Extension\Utility\Apis;
-
-   use Oussema\HideByCountries\Domain\Model\Dto\CountryCode;
-
-   class CustomGeoService
-   {
-       public function getCountryForIp(string $ip): CountryCode
-       {
-           // your implementation
-       }
-   }
-
-----
-
-License
-=======
-
-This extension is released under the GNU General Public License, version 2  
-Copyright © 2025 Oussema Harrabi
-
-----
-
-Index
-=====
-
-* :ref:`Installation`
-* :ref:`Configuration`
-* :ref:`Developers`
+    |today|
