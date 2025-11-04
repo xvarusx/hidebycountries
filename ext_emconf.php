@@ -2,8 +2,8 @@
 
 $EM_CONF[$_EXTKEY] = [
     'title' => 'Hide By Countries',
-    'description' => 'restrict access to some CEs based on the frontEnd user country',
-    'category' => 'be',
+    'description' => 'restrict access to CEs based on the frontend user country',
+    'category' => 'fe',
     'state' => 'stable',
     'version' => '2.0.0',
     'author' => 'Oussema Harrabi',
@@ -11,8 +11,8 @@ $EM_CONF[$_EXTKEY] = [
     'author_company' => 'Oussema ',
     'constraints' => [
         'depends' => [
-            'php' => '8.1.0-8.4.99',
-            'typo3' => '12.4.37-13.9.99',
+            'php' => '8.2.0-8.3.99',
+            'typo3' => '13.4.37-13.9.99',
             'backend' => '13.4.2-13.9.99',
             'extbase' => '13.4.2-13.9.99',
             'fluid' => '13.4.2-13.9.99',
