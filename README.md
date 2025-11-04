@@ -2,7 +2,7 @@
 
 [![TYPO3](https://img.shields.io/badge/TYPO3-12%2B-orange?logo=typo3)](https://typo3.org)
 [![License](https://img.shields.io/badge/license-GPLv2-blue.svg)](https://www.gnu.org/licenses/old-licenses/gpl-2.0.html)
-[![Build Status](https://img.shields.io/github/actions/workflow/status/xvarusx/Hide-By-Countries/tests.yml?branch=main)](https://github.com/xvarusx/Hide-By-Countries/actions)
+[![Build Status](https://img.shields.io/github/actions/workflow/status/xvarusx/hidebycountries/tests.yml?branch=main)](https://github.com/xvarusx/hidebycountries/actions)
 
 > A TYPO3 extension that lets you show or hide content elements based on visitor’s country.
 

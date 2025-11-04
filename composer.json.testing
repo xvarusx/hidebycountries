@@ -21,8 +21,8 @@
     ],
     "homepage": "https://extensions.typo3.org/extension/hidebycountries/",
     "support": {
-        "issues": "https://github.com/xvarusx/Hide-By-Countries/issues",
-        "source": "https://github.com/xvarusx/Hide-By-Countries"
+        "issues": "https://github.com/xvarusx/hidebycountries/issues",
+        "source": "https://github.com/xvarusx/hidebycountries"
     },
     "require": {
         "php": ">= 8.1 < 8.5",
