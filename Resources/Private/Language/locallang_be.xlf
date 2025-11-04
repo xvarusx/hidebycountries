@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+    <file source-language="en" datatype="plaintext" original="messages" date="2025-10-16UTC12:35:520">
+        <header>
+            <authorName>oussema</authorName>
+            <authorEmail>contact@oussemaharrbi.tn</authorEmail>
+        </header>
+        <body>
+            <trans-unit id="extmng.devmode">
+                <source>Active Developemnt Mode</source>
+            </trans-unit>
+            <trans-unit id="extmng.publicIpAddressForTesting">
+                <source>Set your public ip address: override localhost ip address during testing/local developemnt </source>
+            </trans-unit>
+            <trans-unit id="extmng.isBackendIndicatorEnabled">
+                <source>Show restriction indicator in Page module </source>
+            </trans-unit>
+            <trans-unit id="extmng.classNameSpace">
+                <source>Class Name Space:Example: vendorName\extensionName\Utility\geolite2Service</source>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

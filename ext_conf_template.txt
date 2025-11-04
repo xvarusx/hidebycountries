@@ -1,9 +1,9 @@
-  # cat=Development Mode/enable/10; type=boolean; label=Active Developemnt Mode
+  # cat=Development Mode/enable/10; type=boolean; label=LLL:EXT:hidebycountries/Resources/Private/Language/locallang_be.xlf:extmng.devmode
   developemntMode = 1
-  # cat=Development Mode/enable/11; type=text; label=Set your public ip address: override localhost ip address during testing/local developemnt 
+  # cat=Development Mode/enable/11; type=text; label=LLL:EXT:hidebycountries/Resources/Private/Language/locallang_be.xlf:extmng.publicIpAddressForTesting
   publicIpAddressForTesting =
-  # cat=backend/enable/100; type=boolean; label=Show restriction indicator in Page module
+  # cat=backend/enable/100; type=boolean; label=LLL:EXT:hidebycountries/Resources/Private/Language/locallang_be.xlf:extmng.isBackendIndicatorEnabled
   isBackendIndicatorEnabled = 1
-  # cat=Custom api/enable/12; type=text; label=Class Name Space:Example: vendorName\extensionName\Utility\geolite2Service
+  # cat=Custom api/enable/12; type=text; label=EXT:hidebycountries/Resources/Private/Language/locallang_be.xlf:extmng.classNameSpace
   classNameSpace = 
 
