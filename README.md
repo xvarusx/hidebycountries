@@ -13,11 +13,11 @@
 - Cookie-based tracking for visitor’s country for performance.
 - Caching support to reduce repeated lookups.
 - Optional indicator in backend page preview indicating restricted CEs.
-- Compatible with TYPO3 v12 and v13.
+- Compatible with TYPO3 v13.
 
 ## Requirements
 
-- TYPO3 CMS v12 or v13
+- TYPO3 CMS v13
 - PHP 8.1+
 - MySQL / MariaDB (or supported database driver)
 - Composer to install dependencies (if using Composer mode)
